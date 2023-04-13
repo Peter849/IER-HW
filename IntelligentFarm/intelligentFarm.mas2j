@@ -1,0 +1,23 @@
+/*
+    intelligentFarm
+    ---------------------------
+
+    Jason Project File
+
+    This file defines the initial state of the MAS
+
+    Jason 2.5.1
+    április 13, 2023 - 22:56:27
+*/
+
+MAS intelligentFarm {
+
+    infrastructure: Local
+
+    agents: sample_agent;
+        manager;
+        planter;
+        caregiver;
+        collector;
+
+}
