@@ -1,4 +1,4 @@
-// Agent Caregiver in project intelligentFarm
+// Agent manager in project intelligentPlantFarm
 
 /* Initial beliefs and rules */
 

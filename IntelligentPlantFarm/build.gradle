@@ -1,8 +1,8 @@
 /*
-   Project intelligentFarm
+   Project intelligentPlantFarm
 
    Gradle build file for Jason Application
-   április 13, 2023 - 22:56:28
+   április 20, 2023 - 23:35:40
 */
 
 defaultTasks 'run'
@@ -47,10 +47,10 @@ sourceSets {
 task run (type: JavaExec, dependsOn: 'classes') {
     description 'runs the application'
     main = 'jason.infra.local.RunLocalMAS'
-    args 'intelligentFarm.mas2j'
+    args 'intelligentPlantFarm.mas2j'
 	// options:
-	//     args = ['intelligentFarm.mas2j', '--debug']
-	//     args = ['intelligentFarm.mas2j', '--log-conf', 'l.p'] // to use file l.p to configure logging
+	//     args = ['intelligentPlantFarm.mas2j', '--debug']
+	//     args = ['intelligentPlantFarm.mas2j', '--log-conf', 'l.p'] // to use file l.p to configure logging
     classpath sourceSets.main.runtimeClasspath
 }
 

@@ -1,4 +1,4 @@
-// Agent Manager in project intelligentFarm
+// Agent farmerBob in project intelligentPlantFarm
 
 /* Initial beliefs and rules */
 
