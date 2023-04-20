@@ -1,4 +1,4 @@
-// Agent Planter in project intelligentFarm
+// Agent sample_agent in project intelligentPlantFarm
 
 /* Initial beliefs and rules */
 
