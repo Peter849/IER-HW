@@ -9,3 +9,5 @@
 /* Plans */
 
 +!start : true <- .print("hello world.").
+
++tellTask[source(manager)] <- .print("I received a task").

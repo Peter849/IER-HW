@@ -14,5 +14,15 @@ MAS intelligentPlantFarm {
 
     infrastructure: Local
 
+    environment: FarmEnv(gui)
+
     agents: sample_agent;
+        manager;
+
+        farmerBob;
+
+        farmerJim;
+
+        farmerPaul;
+
 }

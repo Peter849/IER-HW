@@ -1,0 +1,22 @@
+// Agent manager in project intelligentPlantFarm
+
+/* Initial BELIEFS*/
+
+!manageFarm.
+value(0).
+	
+/* Initial goals */
+
+!start.
+
+/* Plans */
+
++!start : true 
+	<- .print("hello world."); .believe(busy(false)).
+	
++!manageFarm : not full
+	<- .send(farmerBob, tell, Task);
+	   .send(farmerJim, tell, Task);
+	   .send(farmerPaul, tell, Task).
+	   addTask.
+	   !manageFarm.	

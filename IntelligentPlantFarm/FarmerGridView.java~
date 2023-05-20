@@ -20,40 +20,40 @@ public class FarmerGridView extends GridWorldView{
     public void draw(Graphics g, int x, int y, int object){ 	
 		String label="label!";
         switch(object){
-            case FarmGridModel.SOIL0:
+            case FarmGridModel.SOIL0DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-            case FarmGridModel.SOIL1:
+            case FarmGridModel.SOIL1DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL2:
+			case FarmGridModel.SOIL2DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL3:
+			case FarmGridModel.SOIL3DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL4:
+			case FarmGridModel.SOIL4DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL5:
+			case FarmGridModel.SOIL5DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL6:
+			case FarmGridModel.SOIL6DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL7:
+			case FarmGridModel.SOIL7DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL8:
+			case FarmGridModel.SOIL8DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL9:
+			case FarmGridModel.SOIL9DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL10:
+			case FarmGridModel.SOIL10DOCK:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL11:
+			case FarmGridModel.SOIL11DOCK:
 				super.drawObstacle(g,x,y);
                 break;
 			case FarmGridModel.FARMHOUSELEFT:
