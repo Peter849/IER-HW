@@ -12,9 +12,9 @@
 
 +!start[source(_)]:true <- .listen.
 
-+!check(slots) : not pos(farmerJim,6,6)
+/*+!check(slots) : not pos(farmerJim,6,6)
 	<- next(slot);
-	!check(slots).
+	!check(slots).*/
 	
 +tellTask[source(manager)] <- .print("I received a task");
 							  .listen;

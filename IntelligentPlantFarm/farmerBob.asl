@@ -2,7 +2,7 @@
 
 /* Initial beliefs and rules */
 
-!check(slots).
+!getSeed.
 
 /* Initial goals */
 
@@ -12,8 +12,9 @@
 
 +!start : true <- .print("hello world.").
 
-+!check(slots) : not pos(farmerJim,6,6)
++!getSeed : not pos(farmerBob,9,5)
 	<- next(slot);
-	!check(slots).
-	
-+tellTask[source(manager)] <- .print("I received a task").
+	!getSeed.
+
++tellTask[source(manager)] <- .print("I received a task");
+							  permit.

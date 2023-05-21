@@ -16,7 +16,6 @@ value(0).
 	
 +!manageFarm : not full(manager)
 	<- 	.print("add task");
-		.random(X);
 		addTask;
 		!manageFarm.	
 		
@@ -27,7 +26,8 @@ value(0).
 	   
 +!sendTasks
 	<-	.send(farmerBob, tell, tellTask);
-	    .send(farmerJim, tell, tellTask);
-	    .send(farmerPaul, tell, tellTask);
+	    //.send(farmerJim, tell, tellTas(X));
+	    //.send(farmerPaul, tell, tellTask(X));
 		!sendTasks.
+		
 +receivedTask[source(farmerJim)] <- .print("OK").

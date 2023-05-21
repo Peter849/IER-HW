@@ -16,7 +16,7 @@ MAS intelligentPlantFarm {
 
     environment: FarmEnv(gui)
 
-    agents: sample_agent;
+    agents:
         manager;
 
         farmerBob;

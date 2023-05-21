@@ -14,8 +14,11 @@ public class FarmEnv extends Environment {
 	private int taskCounter;
 	
 	public static final Term ns = Literal.parseLiteral("next(slot)");
-	public static final Term full = Literal.parseLiteral("full");
+	
+	//Manager:
+	public static final Literal full = Literal.parseLiteral("full(manager)");
 	public static final Term at = Literal.parseLiteral("addTask");
+	public static final Term wft = Literal.parseLiteral("waitForTask");
 	
     /** Called before the MAS execution with the args informed in .mas2j */
     @Override
@@ -32,7 +35,7 @@ public class FarmEnv extends Environment {
 
     @Override
     public boolean executeAction(String agName, Structure action) {
-        logger.info("Agent:" + agName + " executing: " + action + "!");
+		//logger.info("Agent:" + agName + ",executes: " + action);
 		try{
 			switch(agName){
 				case "farmerBob":
@@ -75,7 +78,14 @@ public class FarmEnv extends Environment {
 	}
 	void executeActionManager(Structure action){
 		if(action.equals(at)){
+			logger.info("Manager agent executing: " + action + ", taskCounter=" + taskCounter);
 			taskCounter++;
+		}else if(action.equals(wft)){
+			try{
+				Thread.sleep(1000);
+			}catch(InterruptedException e){
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -90,9 +100,11 @@ public class FarmEnv extends Environment {
 		Location farmerJim = model.getAgPos(2);
 		Location farmerPaul = model.getAgPos(3);
 		
-		if(taskCounter >  3){
+		if(taskCounter >= 3){
 			addPercept(full);	
 		}
+		
+		
 	}
 
     /** Called before the end of MAS execution */

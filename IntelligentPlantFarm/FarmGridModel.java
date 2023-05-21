@@ -102,6 +102,8 @@ public class FarmGridModel extends GridWorldModel{
 		
 		Location agentPosition = getAgPos(id); 
 		
+		logger.info("agentID:" + id);
+		
 		agentPosition.x = (agentPosition.x < destination.x && isFree(agentPosition.x+1, agentPosition.y)) ? agentPosition.x + 1 :
         (agentPosition.x > destination.x && isFree(agentPosition.x-1, agentPosition.y)) ? agentPosition.x - 1 : agentPosition.x;
 
