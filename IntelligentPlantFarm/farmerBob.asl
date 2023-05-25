@@ -13,7 +13,7 @@
 +!plant : corn <- .print("I'm planting corn");
 					.wait(3000);
 					!water(corn);
-					.send(manager, tell, cornDone).
+					.send(manager, tell, harvestDone).
 					
 +plant : not potato <- .print("I'm only planting corn");
 						.send(manager, achieve, resolve);

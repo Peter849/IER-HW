@@ -12,10 +12,10 @@ carrot.
 +!plant : potato <- .print("I'm planting potato");	//+plant
 					.wait(2500);
 					!water(potato);
-					.send(manager, tell, potatoDone).
+					.send(manager, tell, harvestDone).
 
 +plant : carrot <- .print("I don't plant potatoes");
-					.send(manager, achieve, paulDisagree).
+					.send(manager, achieve, resolve).
 
 +!persuade <- .print("Alright, I will plant potatoes");
 				-carrot;

@@ -18,27 +18,25 @@
 						.wait(4000);
 						.print("Jim plant some carrot!");
 						.send(farmerJim, tell, plant).
-						//.wait(2000);
-						//.print("Paul plant some potato!");
-						//.send(farmerPaul, tell, plant).
 						
-+!resolve <- .print("Alright you can plant corn, Paul will plant some potato then!");
-				.send(farmerBob, achieve, plant);
-				.wait(2000);
-				.send(farmerPaul, tell, plant).						
++!resolve [source (farmerBob)] <- .print("Alright you can plant corn, Paul will plant some potato then!");
+									.send(farmerBob, achieve, plant);
+									.wait(2000);
+									.send(farmerPaul, tell, plant).						
 				  
-+!paulDisagree <- .print("We need potatoes, so please plant some.");
-						.send(farmerPaul, achieve, persuade).
++!resolve [source(farmerPaul)] <- .print("We need potatoes, so please plant some.");
+									.send(farmerPaul, achieve, persuade).
 						
 					
-+potatoDone <- .print("Harvest is uppon us!").
+//+potatoDone <- .print("Harvest is uppon us!").
++harvestDone [source(farmerPaul)] <- .print("Harvest is closing near!").
 				
-+carrotDone <- .print("Harvest is closing near!").
++harvestDone [source(farmerJim)] <- .print("Harvest is uppon us!").
 				
-+cornDone <- .print("It's harvest time!");
-				.wait(1500);
-				.broadcast(tell, harvest).
++harvestDone [source(farmerBob)] <- .print("It's harvest time!");
+									.wait(1500);
+									.broadcast(tell, harvest).
 				
-+!harvestDone <- .print("Sell Goods!").
++!harvestTime <- .print("Sell Goods!").
 
 

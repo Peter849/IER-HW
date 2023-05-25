@@ -14,7 +14,7 @@ lazy.
 +plant : carrot <- .print("I'm planting carrots");
 					.wait(3000);
 					!water(carrots);
-					.send(manager, tell, carrotDone).
+					.send(manager, tell, harvestDone).
 
 					
 +!water(carrots) <- .print("Watering carrots");
@@ -32,6 +32,6 @@ lazy.
 +!harvest  <- .print("Harvesting carrots");
 				.wait(4000);
 				.print("Carrots are collected");
-				.send(manager, achieve, harvestDone).	
+				.send(manager, achieve, harvestTime).	
 				
 				
