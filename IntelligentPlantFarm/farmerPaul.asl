@@ -28,5 +28,7 @@ carrot.
 					
 +harvest <- .print("Harvesting potato");
 				.wait(4000);
-				.print("Potatoes are collected").					
+				.print("Potatoes are collected").			
+				
++!payment <- .print("Thank you Sir, see you next season!").				
 				

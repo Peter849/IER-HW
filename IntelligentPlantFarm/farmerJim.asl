@@ -34,4 +34,6 @@ lazy.
 				.print("Carrots are collected");
 				.send(manager, achieve, harvestTime).	
 				
++!payment <- .print("Thank you Sir, see you next season!").				
+				
 				

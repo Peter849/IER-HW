@@ -26,5 +26,7 @@
 					
 +harvest <- .print("Harvesting corn");
 				.wait(4000);
-				.print("Corn is collected").							
+				.print("Corn is collected").	
+				
++!payment <- .print("Thank you Sir, see you next season!").				
 				

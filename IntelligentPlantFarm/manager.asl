@@ -27,8 +27,6 @@
 +!resolve [source(farmerPaul)] <- .print("We need potatoes, so please plant some.");
 									.send(farmerPaul, achieve, persuade).
 						
-					
-//+potatoDone <- .print("Harvest is uppon us!").
 +harvestDone [source(farmerPaul)] <- .print("Harvest is closing near!").
 				
 +harvestDone [source(farmerJim)] <- .print("Harvest is uppon us!").
@@ -37,6 +35,10 @@
 									.wait(1500);
 									.broadcast(tell, harvest).
 				
-+!harvestTime <- .print("Sell Goods!").
++!harvestTime <- .print("Sell Goods!");
+					.wait(2000);
+					.print("Dividing payment equally");
+					.print("Sending payment");
+					.broadcast(achieve, payment).
 
 
