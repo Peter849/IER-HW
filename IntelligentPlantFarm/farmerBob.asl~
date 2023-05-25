@@ -1,19 +1,26 @@
 // Agent farmerJim in project intelligentPlantFarm
 
 /* Initial beliefs and rules */
-
-!check(slots).
-
+corn.
 /* Initial goals */
 
 !start.
 
 /* Plans */
 
-+!start : true <- .print("hello world.").
++!start : true <- .print("I'm ready for Work!").
 
-+!check(slots) : not pos(farmerJim,6,6)
-	<- next(slot);
-	!check(slots).
-	
-+tellTask[source(manager)] <- .print("I received a task").
++plant : corn <- .print("I'm planting corn");
+					.wait(3000);
+					!water(corn);
+					.send(manager, tell, cornDone).
+
+					
++!water(corn) <- .print("Watering corn");
+					.wait(11000);
+					.print("Corn is grown").
+					
++harvest <- .print("Harvesting corn");
+				.wait(4000);
+				.print("Corn is collected").							
+				

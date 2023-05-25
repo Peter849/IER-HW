@@ -15,10 +15,10 @@ public class FarmEnv extends Environment {
 	
 	public static final Term ns = Literal.parseLiteral("next(slot)");
 	
-	//Manager:
 	public static final Literal full = Literal.parseLiteral("full(manager)");
 	public static final Term at = Literal.parseLiteral("addTask");
 	public static final Term wft = Literal.parseLiteral("waitForTask");
+	public static final Term pe = Literal.parseLiteral("permit");
 	
     /** Called before the MAS execution with the args informed in .mas2j */
     @Override
@@ -69,10 +69,12 @@ public class FarmEnv extends Environment {
     }
 	
 	void executeActionBob(Structure action){
-		
+		if(action.equals(pe)){
+			model.moveAgent(1, new Location(9,5));
+		}
 	}
 	void executeActionJim(Structure action){
-		model.moveAgent(2, new Location(6,6));
+		//model.moveAgent(2, new Location(6,6));
 	}
 	void executeActionPaul(Structure action){
 	}

@@ -2,32 +2,35 @@
 
 /* Initial BELIEFS*/
 
-//!manageFarm.
-!sendTasks.
-value(0).
-	
 /* Initial goals */
 
 !start.
+!manageFarm.
 
 /* Plans */
 
-+!start : true <- .print("hello world.").
-	
-+!manageFarm : not full(manager)
-	<- 	.print("add task");
-		.random(X);
-		addTask;
-		!manageFarm.	
-		
-+!manageFarm : full(manager)
-	<- .print("wait");
-		waitForTask;
-	   !manageFarm.	
-	   
-+!sendTasks
-	<-	.send(farmerBob, tell, tellTask);
-	    .send(farmerJim, tell, tellTask);
-	    .send(farmerPaul, tell, tellTask);
-		!sendTasks.
-+receivedTask[source(farmerJim)] <- .print("OK").
++!start : true <- .print("Let's Work!").
+
++!manageFarm : true <- .print("Bob plant some corn!");
+				  		.send(farmerBob, tell, plant);
+						.wait(2000);
+						.print("Jim plant some carrot!");
+						.send(farmerJim, tell, plant);
+						.wait(2000);
+						.print("Paul plant some potato!");
+						.send(farmerPaul, tell, plant).
+				  
++!PaulDisagree : true <- .print("We need potatoes, so please plant some.");
+						.send(farmerPaul, achieve, persuade).
+						
+					
++potatoDone <- .print("Harvest is closing near!").
+				
++carrotDone <- .print("Harvest is uppon us").
+				
++cornDone <- .print("It's harvest time!");
+				.wait(1500);
+				.broadcast(tell, harvest).
+
+
+

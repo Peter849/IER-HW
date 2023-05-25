@@ -19,6 +19,9 @@ public class FarmEnv extends Environment {
 	public static final Term at = Literal.parseLiteral("addTask");
 	public static final Term wft = Literal.parseLiteral("waitForTask");
 	public static final Term pe = Literal.parseLiteral("permit");
+	public static final Term pl = Literal.parseLiteral("plant");
+	public static final Literal cm = Literal.parseLiteral("changeMind");
+	
 	
     /** Called before the MAS execution with the args informed in .mas2j */
     @Override
@@ -69,7 +72,7 @@ public class FarmEnv extends Environment {
     }
 	
 	void executeActionBob(Structure action){
-		if(action.equals(pe)){
+		if(action.equals(pl)){
 			model.moveAgent(1, new Location(9,5));
 		}
 	}
@@ -77,18 +80,12 @@ public class FarmEnv extends Environment {
 		//model.moveAgent(2, new Location(6,6));
 	}
 	void executeActionPaul(Structure action){
+		if(action.equals(cm)){
+			model.moveAgent(3, new Location(6,6));
+		}	
 	}
 	void executeActionManager(Structure action){
-		if(action.equals(at)){
-			logger.info("Manager agent executing: " + action + ", taskCounter=" + taskCounter);
-			taskCounter++;
-		}else if(action.equals(wft)){
-			try{
-				Thread.sleep(1000);
-			}catch(InterruptedException e){
-				e.printStackTrace();
-			}
-		}
+		
 	}
 	
 	void updatePercepts(){
