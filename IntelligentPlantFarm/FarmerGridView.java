@@ -7,6 +7,7 @@ import java.util.logging.*;
 public class FarmerGridView extends GridWorldView{
     private FarmGridModel model;
 	private Logger logger = Logger.getLogger("IntelligentPlantFarm.mas2j."+FarmerGridView.class.getName());
+	private Color cornColor = Color.ORANGE;
 	
     public FarmerGridView(FarmGridModel m){
         super(m,"Intelligent Plant Farm",700);
@@ -16,9 +17,14 @@ public class FarmerGridView extends GridWorldView{
         repaint();
     }
 	
+	public void setCornColor(Color c){
+		this.cornColor = c;
+	}
+	
     @Override
     public void draw(Graphics g, int x, int y, int object){ 	
 		String label="label!";
+		g.setColor(this.cornColor);
         switch(object){
             case FarmGridModel.SOIL0:
 				super.drawObstacle(g,x,y);
