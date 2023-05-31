@@ -1,32 +1,42 @@
-// Agent farmerJim in project intelligentPlantFarm
+// Agent farmerJim in project intelligentPlantFarm - He likes to plant mainly WHEAT
 
 /* Initial beliefs and rules */
-//corn.
-/* Initial goals */
+//wheat.
 
+/* Initial goals */
 !start.
 
 /* Plans */
 
-+!start : true <- .print("I'm ready for Work!").
-
-+!plant : corn <- .print("I'm planting corn");
++!start : true <- .print("I'm farmer Bob, and ready for Work!");
+				  !at(farmerBob,start). 
+				  				  
++!at(farmerBob,P):at(farmerBob,P)
+	<- true.
+	
++!at(farmerBob,P): not at(farmerBob,P)
+	<- move_to_destination(P,1);
+		!at(farmerBob,P).				  
+				  
++!plant : wheat <- .print("I'm planting WHEAT");
 					.wait(3000);
-					!water(corn);
+					!water(wheat);
+					drawCorn;
 					.send(manager, tell, harvestDone).
 					
-+plant : not potato <- .print("I'm only planting corn");
++plant : not wheat <- .print("I'm only planting WHEAT");
 						.send(manager, achieve, resolve);
-						+corn.					
-
-					
-+!water(corn) <- .print("Watering corn");
+						+wheat.					
+						
++!water(wheat) <- .print("Watering WHEAT");
+					waterCorn;
 					.wait(11000);
-					.print("Corn is grown").
+					.print("WHEAT is grown").
 					
-+harvest <- .print("Harvesting corn");
++harvest <- .print("Harvesting WHEAT");
 				.wait(4000);
-				.print("Corn is collected").	
+				//resetWheat;
+				.print("WHEAT is collected").	
 				
 +!payment <- .print("Thank you Sir, see you next season!").				
 				

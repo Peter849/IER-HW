@@ -1,4 +1,4 @@
-// Agent farmerJim in project intelligentPlantFarm
+// Agent farmerJim in project intelligentPlantFarm - He likes to plant mainly CORN
 
 /* Initial beliefs and rules */
 carrot.
@@ -9,7 +9,15 @@ lazy.
 
 /* Plans */
 
-+!start : true <- .print("I'm ready for Work!").
++!start : true <- .print("I'm farmer Jim, and ready for Work!");
+				  !at(farmerJim,start).
+
++!at(farmerJim,P):at(farmerJim,P)
+	<- true.
+	
++!at(farmerJim,P): not at(farmerJim,P)
+	<- move_to_destination(P,2);
+		!at(farmerJim,P).	
 
 +plant : carrot <- .print("I'm planting carrots");
 					.wait(3000);

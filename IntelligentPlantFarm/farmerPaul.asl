@@ -1,4 +1,4 @@
-// Agent farmerPaul in project intelligentPlantFarm
+// Agent farmerPaul in project intelligentPlantFarm - He likes to plant mainly BARLEY
 
 /* Initial beliefs and rules */
 carrot.
@@ -7,7 +7,15 @@ carrot.
 !start.
 
 /* Plans */
-+!start : true <- .print("I'm ready for Work!").
++!start : true <- .print("I'm farmer Paul, and ready for Work!");
+				  !at(farmerPaul,start).
+
++!at(farmerPaul,P):at(farmerPaul,P)
+	<- true.
+	
++!at(farmerPaul,P): not at(farmerPaul,P)
+	<- move_to_destination(P,3);
+		!at(farmerPaul,P).	
 
 +!plant : potato <- .print("I'm planting potato");	//+plant
 					.wait(2500);

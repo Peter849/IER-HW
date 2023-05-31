@@ -10,7 +10,16 @@
 
 /* Plans */
 
-+!start : true <- .wait(500); .print("Let's Work!").
++!start : true <- .wait(500); 
+				  .print("Let's Work!");
+				  !at(manager,start).
+
++!at(manager,P):at(manager,P)
+	<- true.
+	
++!at(manager,P): not at(manager,P)
+	<- move_to_destination(P,0);
+		!at(manager,P).	
 
 +!manageFarm : true <- .wait(1000);
 						.print("Bob plant some potato!");
