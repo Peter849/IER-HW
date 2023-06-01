@@ -1,7 +1,7 @@
-// Agent farmerJim in project intelligentPlantFarm
+// Agent farmerJim in project intelligentPlantFarm - CORN
 
 /* Initial beliefs and rules */
-carrot.
+corn.
 lazy.
 /* Initial goals */
 
@@ -11,27 +11,31 @@ lazy.
 
 +!start : true <- .print("I'm ready for Work!").
 
-+plant : carrot <- .print("I'm planting carrots");
++plant : corn <- 	move;
+					.print("I'm planting corn");
 					.wait(3000);
-					!water(carrots);
+					!water(corn);
 					.send(manager, tell, harvestDone).
 
 					
-+!water(carrots) <- .print("Watering carrots");
++!water(corn) <- .print("Watering corn");
+					water;
 					.wait(2000);
-					.print("Carrots are grown").
+					.print("Corns are grown").
 					
 				
 +harvest : lazy <- .print("I'm lazy i'll do it later");
-					.wait(7000);
+					.wait(3000);
 					-lazy;
 					.print("It's time for me to harvest");
 					!harvest.
-					
-					
-+!harvest  <- .print("Harvesting carrots");
-				.wait(4000);
-				.print("Carrots are collected");
-				.send(manager, achieve, harvestTime).	
+									
++!harvest  <- .print("Harvesting corns");
+				harvest;
+				collected;
+				.send(manager, achieve, harvestDone).	
 				
-+!payment <- .print("Thank you Sir, see you next season!").				
++!payment <- .wait(1500);
+			getPayment;
+			.print("Thank you Sir, see you next season!");
+			leave.
