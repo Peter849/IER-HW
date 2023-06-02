@@ -17,6 +17,7 @@ public class FarmEnv extends Environment {
 	
 	public static final Literal co = Literal.parseLiteral("collected");
 	public static final Literal mo = Literal.parseLiteral("move");
+	public static final Literal mf = Literal.parseLiteral("moveField");
 	public static final Literal wa = Literal.parseLiteral("water");
 	public static final Literal ha = Literal.parseLiteral("harvest");
 	public static final Literal se = Literal.parseLiteral("sell");
@@ -77,6 +78,9 @@ public class FarmEnv extends Environment {
 			logger.info("Collected: " + amount + " wheat");
 		}
 		if(action.equals(mo)){
+			model.bobMoveToSilo();
+		}
+		if(action.equals(mf)){
 			model.bobMoveToField();
 		}
 		if(action.equals(wa)){
@@ -100,6 +104,9 @@ public class FarmEnv extends Environment {
 			logger.info("Collected: " + amount + " corn");
 		}
 		if(action.equals(mo)){
+			model.jimMoveToSilo();
+		}
+		if(action.equals(mf)){
 			model.jimMoveToField();
 		}
 		if(action.equals(wa)){
@@ -122,6 +129,9 @@ public class FarmEnv extends Environment {
 			logger.info("Collected: " + amount + " barley");
 		}
 		if(action.equals(mo)){
+			model.paulMoveToSilo();
+		}
+		if(action.equals(mf)){
 			model.paulMoveToField();
 		}
 		if(action.equals(wa)){

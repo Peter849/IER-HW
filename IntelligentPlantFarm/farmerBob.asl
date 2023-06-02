@@ -10,8 +10,10 @@
 
 +!start : true <- .print("I'm ready for Work!").
 
-+!plant : wheat <- 	.print("I'm planting wheat");
++!plant : wheat <- 	.print("Getting necessary seed from Silo.");
 					move;
+					.print("I'm planting wheat");	
+					moveField;
 					.wait(3000);
 					!water(wheat);
 					.send(manager, tell, harvestDone).

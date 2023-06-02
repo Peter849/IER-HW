@@ -1,7 +1,7 @@
-// Agent farmerPaul in project intelligentPlantFarm
+// Agent farmerPaul in project intelligentPlantFarm - BARLEY
 
 /* Initial beliefs and rules */
-carrot.
+corn.
 /* Initial goals */
 
 !start.
@@ -9,25 +9,31 @@ carrot.
 /* Plans */
 +!start : true <- .print("I'm ready for Work!").
 
-+!plant : potato <- .print("I'm planting potato");	//+plant
++!plant : barley <- .print("Getting necessary seed from Silo.");
+					move;
+					.print("I'm planting barley.");	
+					moveField;
 					.wait(2500);
-					!water(potato);
+					!water(barley);
 					.send(manager, tell, harvestDone).
 
-+plant : carrot <- .print("I don't plant potatoes");
++plant : corn <- .print("I don't plant barley");
 					.send(manager, achieve, resolve).
 
-+!persuade <- .print("Alright, I will plant potatoes");
-				-carrot;
-				+potato;
++!persuade <- .print("Alright, I will plant barley");
+				-corn;
+				+barley;
 				!plant.  //+plant
 				
-+!water(potato) <- .print("Watering potatoes");
++!water(barley) <- .print("Watering barley");
+					water;
 					.wait(3500);
-					.print("Potatoes are grown").
+					.print("Barley is grown").
 					
-+harvest <- .print("Harvesting potato");
-				.wait(4000);
-				.print("Potatoes are collected").			
++harvest <- .print("Harvesting barley");
+				harvest;
+				collected.			
 				
-+!payment <- .print("Thank you Sir, see you next season!").	
++!payment <- getPayment;
+			.print("Thank you Sir, see you next season!");
+			leave.

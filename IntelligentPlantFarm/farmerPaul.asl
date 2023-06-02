@@ -9,8 +9,10 @@ corn.
 /* Plans */
 +!start : true <- .print("I'm ready for Work!").
 
-+!plant : barley <- 	move;
-					.print("I'm planting barley");	//+plant
++!plant : barley <- .print("Getting necessary seed from Silo.");
+					move;
+					.print("I'm planting barley.");	
+					moveField;
 					.wait(2500);
 					!water(barley);
 					.send(manager, tell, harvestDone).

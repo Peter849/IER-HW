@@ -1,7 +1,7 @@
-// Agent farmerJim in project intelligentPlantFarm
+// Agent farmerJim in project intelligentPlantFarm - WHEAT
 
 /* Initial beliefs and rules */
-//corn.
+
 /* Initial goals */
 
 !start.
@@ -10,23 +10,29 @@
 
 +!start : true <- .print("I'm ready for Work!").
 
-+!plant : corn <- .print("I'm planting corn");
++!plant : wheat <- 	.print("I'm planting wheat");
+					move;
 					.wait(3000);
-					!water(corn);
+					!water(wheat);
 					.send(manager, tell, harvestDone).
 					
-+plant : not potato <- .print("I'm only planting corn");
++plant : not wheat <- .print("I'm only planting wheat");
 						.send(manager, achieve, resolve);
-						+corn.					
+						+wheat.					
 
 					
-+!water(corn) <- .print("Watering corn");
-					.wait(11000);
-					.print("Corn is grown").
++!water(wheat) <- .print("Watering wheat");
+					water;
+					.wait(4000);
+					.print("Wheat is grown").
 					
-+harvest <- .print("Harvesting corn");
-				.wait(4000);
-				.print("Corn is collected").	
++harvest <- .print("Harvesting wheat");
+			harvest;
+			collected. 
+			
 				
-+!payment <- .print("Thank you Sir, see you next season!").				
++!payment <- .wait(3000);
+				getPayment;
+				.print("Thank you Sir, see you next season!");
+				leave.
 				

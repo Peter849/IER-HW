@@ -11,8 +11,10 @@ lazy.
 
 +!start : true <- .print("I'm ready for Work!").
 
-+plant : corn <- 	move;
-					.print("I'm planting corn");
++plant : corn <- 	.print("Getting necessary seed from Silo.");
+					move;
+					.print("I'm planting corn.");	
+					moveField;
 					.wait(3000);
 					!water(corn);
 					.send(manager, tell, harvestDone).
