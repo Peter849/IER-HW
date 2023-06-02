@@ -19,40 +19,40 @@ public class FarmerGridView extends GridWorldView{
     public void draw(Graphics g, int x, int y, int object){ 	
 		String label="label!";
         switch(object){
-            case FarmGridModel.SOIL0DOCK:
+            case FarmGridModel.SOIL0:
 				super.drawObstacle(g,x,y);
                 break;
-            case FarmGridModel.SOIL1DOCK:
+            case FarmGridModel.SOIL1:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL2DOCK:
+			case FarmGridModel.SOIL2:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL3DOCK:
+			case FarmGridModel.SOIL3:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL4DOCK:
+			case FarmGridModel.SOIL4:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL5DOCK:
+			case FarmGridModel.SOIL5:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL6DOCK:
+			case FarmGridModel.SOIL6:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL7DOCK:
+			case FarmGridModel.SOIL7:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL8DOCK:
+			case FarmGridModel.SOIL8:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL9DOCK:
+			case FarmGridModel.SOIL9:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL10DOCK:
+			case FarmGridModel.SOIL10:
 				super.drawObstacle(g,x,y);
                 break;
-			case FarmGridModel.SOIL11DOCK:
+			case FarmGridModel.SOIL11:
 				super.drawObstacle(g,x,y);
                 break;
 			case FarmGridModel.FARMHOUSELEFT:
@@ -73,7 +73,7 @@ public class FarmerGridView extends GridWorldView{
 		switch(id){
 			case 0:
 				label="Manager";
-				c=Color.yellow;
+				c=Color.green;
 				break;
 			case 1:
 				label="Bob";
@@ -86,6 +86,18 @@ public class FarmerGridView extends GridWorldView{
 			case 3:
 				label="Paul";
 				c=Color.red;
+				break;
+			case 40,41,42,43:
+				label="Wheat";
+				c=Color.yellow;
+				break;
+			case 8,9,10,11:
+				label="Corn";
+				c=Color.yellow;
+				break;
+			case 12,13,14,15:
+				label="Barley";
+				c=Color.yellow;
 				break;
 			default:
 				logger.info("Invalid argument: Agent is not existing!");

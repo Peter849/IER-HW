@@ -115,18 +115,35 @@ public class FarmGridModel extends GridWorldModel{
 		add(SOIL10,soil10);
 		add(SOIL11,soil11);
     }
+	void bobMoveToSilo(){
+		try{
+			for(int i = 0; i<4; i++){
+				move("NORTH", 1);
+				Thread.sleep(250);
+			}
+			for(int i = 0; i<9; i++){
+				move("EAST", 1);
+				Thread.sleep(250);
+			}
+			for(int i = 0; i<2; i++){
+				move("SOUTH", 1);
+				Thread.sleep(250);
+			}
+		}catch (Exception e){}
+	}
 	
 	void bobMoveToField(){
 		try{
-			move("EAST", 1);
+			for(int i = 0; i<2; i++){
+				move("NORTH", 1);
+				Thread.sleep(250);
+			}
+			for(int i = 0; i<7; i++){
+				move("WEST", 1);
+				Thread.sleep(250);
+			}
+			move("SOUTH", 1);
 			Thread.sleep(250);
-			move("EAST", 1);
-			Thread.sleep(250);
-			move("NORTH", 1);
-			Thread.sleep(250);
-			move("NORTH", 1);
-			Thread.sleep(250);
-			move("NORTH", 1);
 		}catch (Exception e){}
 		setAgPos(wheatID,wheatLoc);
 		setAgPos(wheatID2,wheatLoc2);
@@ -185,10 +202,27 @@ public class FarmGridModel extends GridWorldModel{
 		}catch(Exception e){}
 	}
 	
+	void jimMoveToSilo(){
+		try{
+			for(int i = 0; i<8; i++){
+				move("EAST", 2);
+				Thread.sleep(250);
+			}
+			for(int i = 0; i<2; i++){
+				move("NORTH", 2);
+				Thread.sleep(250);
+			}
+		}catch (Exception e){}
+	}
+	
 	boolean jimMoveToField(){
 		try{
-			for(int i = 0; i<4; i++){
-				move("EAST", 2);
+			for(int i = 0; i<2; i++){
+				move("SOUTH", 2);
+				Thread.sleep(250);
+			}
+			for(int j = 0; j<4; j++){
+				move("WEST", 2);
 				Thread.sleep(250);
 			}
 			for(int j = 0; j<4; j++){
@@ -249,10 +283,27 @@ public class FarmGridModel extends GridWorldModel{
 		}catch(Exception e){}
 	}
 	
+	void paulMoveToSilo(){
+		try{
+			for(int i = 0; i<9; i++){
+				move("EAST", 3);
+				Thread.sleep(250);
+			}
+			for(int i = 0; i<2; i++){
+				move("NORTH", 3);
+				Thread.sleep(250);
+			}
+		}catch (Exception e){}
+	}
+	
 	boolean paulMoveToField(){
 		try{
-			for(int i = 0; i<6; i++){
-				move("EAST", 3);
+			for(int i = 0; i<2; i++){
+				move("SOUTH", 3);
+				Thread.sleep(250);
+			}
+			for(int j = 0; j<3; j++){
+				move("WEST", 3);
 				Thread.sleep(250);
 			}
 			for(int j = 0; j<5; j++){
